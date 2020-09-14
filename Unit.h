@@ -1,5 +1,5 @@
-#ifndef LINEARNODE_H
-#define LINEARNODE_H
+#ifndef HEADERFILE_H
+#define HEADERFILE_H
 
 
 #include <string>
