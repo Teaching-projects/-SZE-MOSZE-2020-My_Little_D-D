@@ -10,7 +10,7 @@ class Unit
 private:
     const std::string Name;
     int Health;
-    int Damage;
+    const int Damage;
 public:
     Unit(std::string pName,std::string pHealth, std::string pDamage);
     std::string getName() const;
