@@ -8,17 +8,15 @@
 class Unit
 {
 private:
-    std::string Name;
+    const std::string Name;
     int Health;
     int Damage;
 public:
     Unit(std::string pName,std::string pHealth, std::string pDamage);
-    ~Unit();
-    std::string getName();
-    int getHealth();
-    int getDamage();
+    std::string getName() const;
+    int getHealth() const;
+    int getDamage() const;
     void getAttacked(int amount);
-    void setHealth(int newHealth);
 };
 
 #endif
