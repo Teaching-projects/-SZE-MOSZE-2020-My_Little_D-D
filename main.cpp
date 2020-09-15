@@ -1,5 +1,3 @@
-//my first commit test 
-
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -36,9 +34,6 @@ void fight(Unit& UnitA, Unit& UnitB){
 }
 
 int main(int argc, char** argv){
-    //Unit* UnitOne = new Unit(argv[1],argv[2],argv[3]);
-   // Unit* UnitTwo = new Unit(argv[4],argv[5],argv[6]);
-
     Unit UnitOne(argv[1],argv[2],argv[3]);
     Unit UnitTwo(argv[4],argv[5],argv[6]);
     fight(UnitOne,UnitTwo);
