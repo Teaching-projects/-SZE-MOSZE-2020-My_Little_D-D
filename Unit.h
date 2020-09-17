@@ -3,7 +3,6 @@
 
 
 #include <string>
-#include <sstream>
 
 class Unit
 {
@@ -12,11 +11,11 @@ private:
     int Health;
     const int Damage;
 public:
-    Unit(std::string pName,std::string pHealth, std::string pDamage);
+    Unit(std::string pName,double pHealth, double pDamage);
     std::string getName() const;
-    int getHealth() const;
-    int getDamage() const;
-    void getAttacked(int amount);
+    double getHealth() const;
+    double getDamage() const;
+    void getAttacked(Unit& unitAttacker);
 };
 
 #endif

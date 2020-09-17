@@ -1,23 +1,20 @@
 #include "Unit.h"
 
 
-Unit::Unit(std::string pName,std::string pHealth, std::string pDamage) : Name(pName), Damage(std::stoi(pDamage))
-{
-    std::stringstream healthValue(pHealth);
-    healthValue >> Health;
-}
+Unit::Unit(std::string pName,double pHealth, double pDamage) : Name(pName), Damage(pDamage), Health(pHealth){};
+
 std::string Unit::getName() const{
     return Name;
 }
-int Unit::getHealth() const{
+double Unit::getHealth() const{
     return Health;
 }
-int Unit::getDamage() const{
+double Unit::getDamage() const{
     return Damage;
 }
 
-void Unit::getAttacked(int amount){
-    Health -= amount;
+void Unit::getAttacked(Unit& unitAttacker){
+    Health -= unitAttacker.getDamage();
     if(Health < 0){
         Health = 0;
     }
