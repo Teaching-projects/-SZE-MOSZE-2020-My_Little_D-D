@@ -8,8 +8,8 @@ class Unit
 {
 private:
     const std::string Name;
-    int Health;
-    const int Damage;
+    double Health;
+    const double Damage;
 public:
     Unit(std::string pName,double pHealth, double pDamage);
     std::string getName() const;
