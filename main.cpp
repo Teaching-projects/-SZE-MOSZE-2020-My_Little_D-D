@@ -4,7 +4,7 @@
 
 #include "Unit.h"
 
-void const printUnits(const Unit& UnitA,const Unit& UnitB) {
+void printUnits(const Unit& UnitA,const Unit& UnitB) {
     std::cout << UnitA.getName() << " Hp:" << UnitA.getHealth() << " Damage: " << UnitA.getDamage() << std::endl;
     std::cout << UnitB.getName() << " Hp:" << UnitB.getHealth() << " Damage: " << UnitB.getDamage() << std::endl;
 }
