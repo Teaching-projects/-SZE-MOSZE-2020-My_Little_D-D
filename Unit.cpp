@@ -13,7 +13,7 @@ double Unit::getDamage() const{
     return Damage;
 }
 
-void Unit::getAttacked(Unit& unitAttacker){
+void Unit::getAttacked(const Unit& unitAttacker){
     Health -= unitAttacker.getDamage();
     if(Health < 0){
         Health = 0;

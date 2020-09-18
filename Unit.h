@@ -15,7 +15,7 @@ public:
     std::string getName() const;
     double getHealth() const;
     double getDamage() const;
-    void getAttacked(Unit& unitAttacker);
+    void getAttacked(const Unit& unitAttacker);
 };
 
 #endif
