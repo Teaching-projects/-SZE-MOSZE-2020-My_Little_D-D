@@ -1,0 +1,5 @@
+{
+    "name" : "Maiev Shadowsong",
+    "hp" : 25000,
+    "dmg" : 9999
+  }
