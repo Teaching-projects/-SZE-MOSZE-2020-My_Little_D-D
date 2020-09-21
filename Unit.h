@@ -3,6 +3,10 @@
 
 
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <cstring>
 
 class Unit
 {
@@ -16,6 +20,8 @@ public:
     double getHealth() const;
     double getDamage() const;
     void getAttacked(const Unit& unitAttacker);
+    static Unit parseUnit(std::string fileName);
+    Unit(const Unit& alpha);
 };
 
 #endif
