@@ -3,6 +3,5 @@
 IFS=$'\n'
 
 for i in `cat input.txt`; do 
-    echo "Eredmeny: $i,"
-    echo "$i" | ./a.out  
+    echo $i | xargs ./a.exe >> output.txt
 done 
