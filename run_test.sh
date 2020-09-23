@@ -3,6 +3,6 @@
 IFS=$'\n'
 
 for i in `cat input.txt`; do 
-    echo "Eredmeny: $i, \t"
+    echo "Eredmeny: $i,"
     echo "$i" | ./a.out  
 done 
