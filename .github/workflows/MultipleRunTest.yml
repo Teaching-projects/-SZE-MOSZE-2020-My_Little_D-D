@@ -1,4 +1,4 @@
-name: Elso WorkFlow
+name: Multiple Run Test
 
 on: 
   push
