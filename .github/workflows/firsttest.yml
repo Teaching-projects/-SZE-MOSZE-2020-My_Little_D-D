@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: g++ -Wall *.cpp
       - run: chmod +x run_test.sh
-      - run: ./run_test.sh
-      - run: diff output.txt good_output.txt
+      - run: ./run_test.sh a.out generated_output.txt
+      - run: diff generated_output.txt good_output.txt
