@@ -10,8 +10,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build
         run: g++ *.cpp 
-      - name: Run test script
+      - name: Permission
         run: chmod +x run_test.sh
+      - name: Run Test script
         run: ./run_test.sh a.out generated_output.txt
       - name: Upload result file
         uses: actions/upload-artifact@v2
