@@ -32,7 +32,7 @@ Unit Unit::parseUnit(std::string fileName){
     std::string line = "" , searchTerm;
     std::size_t searchResult;
     std::ifstream file(fileName);
-    std::stringstream ss;
+    int linecounter = 0;
     if(!file.is_open()){
         Unit outputUnit("ERROR",0,0);
         return outputUnit;
@@ -43,7 +43,12 @@ Unit Unit::parseUnit(std::string fileName){
         searchResult = line.find(searchTerm);
         if(searchResult != std::string::npos){
            tmpString = line.substr((searchResult+searchTerm.size()+1));
+           if(linecounter<=2){
            tmpString.resize(tmpString.size()-2);
+           }
+           else{
+               tmpString.resize(tmpString.size()-1);
+           }
            name = tmpString;
         }
 
@@ -59,7 +64,7 @@ Unit Unit::parseUnit(std::string fileName){
             tmpString = line.substr(searchResult+searchTerm.size());
             health = std::stod(tmpString);
         }
-
+        linecounter++;
     }
     
     file.close();

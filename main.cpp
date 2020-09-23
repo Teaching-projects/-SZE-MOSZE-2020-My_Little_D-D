@@ -30,10 +30,12 @@ void fight(Unit& UnitA, Unit& UnitB){
         }
     }
     if(UnitA.getHealth()<=0){
-        std::cout << UnitA.getName() << " died. " << UnitB.getName() << " wins. " << std::endl;
+        //std::cout << UnitA.getName() << " died. " << UnitB.getName() << " wins. " << std::endl;
+        std::cout << UnitB.getName() << " wins. Remaining HP:" << UnitB.getHealth()<< std::endl; 
     }
     if(UnitB.getHealth()<=0){
-        std::cout << UnitB.getName() << " died. " << UnitA.getName() << " wins. " << std::endl;
+        //std::cout << UnitB.getName() << " died. " << UnitA.getName() << " wins. " << std::endl;
+        std::cout << UnitA.getName() << " wins. Remaining HP:" << UnitA.getHealth()<< std::endl; 
     }
 }
 

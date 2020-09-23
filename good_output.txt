@@ -1,6 +1,6 @@
-Illidan Stormrage died. Arthas Menethil wins. 
-Maiev Shadowsong died. Arthas Menethil wins. 
-Illidan Stormrage died. Arthas Menethil wins. 
-Maiev Shadowsong died. Illidan Stormrage wins. 
-Maiev Shadowsong died. Arthas Menethil wins. 
-Illidan Stormrage died. Maiev Shadowsong wins. 
+Arthas Menethil wins. Remaining HP:9800 
+Arthas Menethil wins. Remaining HP:10003 
+Arthas Menethil wins. Remaining HP:2250 
+Illidan Stormrage wins. Remaining HP:5003 
+Arthas Menethil wins. Remaining HP:4  
+Maiev Shadowsong wins. Remaining HP:2350 
