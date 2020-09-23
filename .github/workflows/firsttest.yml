@@ -9,14 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-         run: g++ *.cpp -o rpg
+        run: g++ *.cpp 
       - name: Run test script
-         run: chmod +x run_test.sh
-         run: ./run_test.sh rpg generated_output.txt
+        run: chmod +x run_test.sh
+        run: ./run_test.sh a.out generated_output.txt
       - name: Upload result file
-         uses: actions/upload-artifact@v2
-         with:
+        uses: actions/upload-artifact@v2
+        with:
           name: Result
           path: generated_output.txt
       - name: Check differences
-         run: diff generated_output.txt good_output.txt
+        run: diff generated_output.txt good_output.txt
