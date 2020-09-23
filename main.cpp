@@ -50,7 +50,7 @@ bool validateUnit(const Unit& unit){
 int main(int argc, char *argv[]){
     Unit UnitOne = Unit::parseUnit(argv[1]);
     Unit UnitTwo = Unit::parseUnit(argv[2]);
-    if(!validateUnit(UnitOne) && !validateUnit(UnitTwo)){
+    if(!validateUnit(UnitOne) || !validateUnit(UnitTwo)){
         std::cout<< "HIBA!" << std::endl;
         return 1;
     }
