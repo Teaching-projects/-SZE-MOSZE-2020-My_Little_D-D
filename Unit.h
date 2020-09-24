@@ -20,7 +20,7 @@ public:
     double getHealth() const;
     double getDamage() const;
     void getAttacked(const Unit& unitAttacker);
-    static Unit parseUnit(std::string fileName);
+    static Unit parseUnit(const std::string fileName);
     Unit(const Unit& alpha);
 };
 

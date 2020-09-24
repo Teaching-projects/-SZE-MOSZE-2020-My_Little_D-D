@@ -26,13 +26,14 @@ Unit::Unit(const Unit& alpha):
     Health(alpha.getHealth())
     {}
 
-Unit Unit::parseUnit(std::string fileName){
+Unit Unit::parseUnit(const std::string fileName){
     std::string tmpString, name = "";
     double health, damage = 0;
     std::string line = "" , searchTerm;
     std::size_t searchResult;
     std::ifstream file(fileName);
     int linecounter = 0;
+    
     if(!file.is_open()){
         Unit outputUnit("ERROR",0,0);
         return outputUnit;
