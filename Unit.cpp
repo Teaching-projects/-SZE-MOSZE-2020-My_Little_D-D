@@ -35,22 +35,22 @@ Unit Unit::parseUnit(const std::string fileName){
     int linecounter = 0;
     
     if(!file.is_open()){
-        Unit outputUnit("ERROR",0,0);
-        return outputUnit;
+        throw "The file is missing";
     }
+
     while (std::getline(file,line))
     {
         searchTerm = "\"name\" : ";
         searchResult = line.find(searchTerm);
         if(searchResult != std::string::npos){
-           tmpString = line.substr((searchResult+searchTerm.size()+1));
-           if(linecounter<=2){
-           tmpString.resize(tmpString.size()-2);
-           }
-           else{
-               tmpString.resize(tmpString.size()-1);
-           }
-           name = tmpString;
+        tmpString = line.substr((searchResult+searchTerm.size()+1));
+        if(linecounter<=2){
+        tmpString.resize(tmpString.size()-2);
+        }
+        else{
+            tmpString.resize(tmpString.size()-1);
+        }
+        name = tmpString;
         }
 
         searchTerm ="\"dmg\" : ";

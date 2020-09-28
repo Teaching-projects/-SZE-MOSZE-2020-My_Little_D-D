@@ -14,50 +14,34 @@ void printUnit(Unit* Unit){
 }
 
 void fight(Unit& UnitA, Unit& UnitB){
-    //printUnits(UnitA,UnitB);
     while(UnitA.getHealth() > 0 && UnitB.getHealth() > 0){
-        //std::cout << UnitA.getName() << " -> " << UnitB.getName() << std::endl; 
         UnitB.getAttacked(UnitA);
-        //printUnits(UnitA,UnitB);
         if(UnitB.getHealth()<=0){
             break;
         }
-        //std::cout << UnitB.getName() << " -> " << UnitA.getName() << std::endl;
         UnitA.getAttacked(UnitB);
-        //printUnits(UnitA,UnitB);
         if(UnitA.getHealth()<=0){
             break;
         }
     }
     if(UnitA.getHealth()<=0){
-        //std::cout << UnitA.getName() << " died. " << UnitB.getName() << " wins. " << std::endl;
         std::cout << UnitB.getName() << " wins. Remaining HP:" << UnitB.getHealth()<< std::endl; 
     }
     if(UnitB.getHealth()<=0){
-        //std::cout << UnitB.getName() << " died. " << UnitA.getName() << " wins. " << std::endl;
         std::cout << UnitA.getName() << " wins. Remaining HP:" << UnitA.getHealth()<< std::endl; 
     }
 }
 
-bool validateUnit(const Unit& unit){
-    if(unit.getName() == "ERROR"){
-        return false;
-    }
-    else 
-        return true;
-}
-
-
-
 int main(int argc, char *argv[]){
+    try{
     Unit UnitOne = Unit::parseUnit(argv[1]);
     Unit UnitTwo = Unit::parseUnit(argv[2]);
-    if(!validateUnit(UnitOne) || !validateUnit(UnitTwo)){
-        std::cout<< "HIBA!" << std::endl;
+    fight(UnitOne,UnitTwo);
+    }
+    catch (const char* msg){
+        std::cerr << msg << std::endl;
         return 1;
     }
-    fight(UnitOne,UnitTwo);
-    
     
     return 0;
 } 
