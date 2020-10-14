@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: g++ *.cpp 
+        run: g++ -std=c++17 *.cpp
       - name: Permission
         run: chmod +x run_test.sh
       - name: Run Test script
