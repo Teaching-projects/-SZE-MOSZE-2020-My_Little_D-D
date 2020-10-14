@@ -13,7 +13,8 @@ Például:
 {
     "name" : "Arthas Menethil",
     "hp" : 40000,
-    "dmg" : 7000
+    "dmg" : 7000,
+    "attackspeed" : 0.9
 }
 ```
 Sorrend nem számít, a program kikeresi melyik sorban melyik adat található.
