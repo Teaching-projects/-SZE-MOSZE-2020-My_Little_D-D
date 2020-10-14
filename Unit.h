@@ -13,12 +13,18 @@ class Unit
 private:
     const std::string Name;
     double Health;
-    const double Damage;
+    double Damage;
+    double Attackspeed;
 public:
-    Unit(std::string pName,double pHealth, double pDamage);
+    Unit(std::string pName,
+            double pHealth,
+            double pDamage,
+            double Attackspeed);
+
     std::string getName() const;
     double getHealth() const;
     double getDamage() const;
+    double getAttackSpeed() const;
     void getAttacked(const Unit& unitAttacker);
     static Unit parseUnit(const std::string fileName);
     Unit(const Unit& alpha);

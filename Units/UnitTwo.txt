@@ -1,5 +1,6 @@
 {
     "name" : "Illidan Stormrage",
     "hp" : 35000,
-    "dmg" : 7550
+    "dmg" : 7550,
+    "attackspeed" : 0.3
   }

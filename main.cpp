@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <math.h>
 
 #include "Unit.h"
 
@@ -13,22 +14,36 @@ void printUnit(Unit* Unit){
     std::cout << Unit->getName() << " " << Unit->getHealth() << " " << Unit->getDamage() << std::endl;
 }
 
-void fight(Unit& UnitA, Unit& UnitB){
-    while(UnitA.getHealth() > 0 && UnitB.getHealth() > 0){
-        UnitB.getAttacked(UnitA);
-        if(UnitB.getHealth()<=0){
-            break;
+void fight(Unit& UnitAttacker, Unit& UnitDefender){
+    double fightDuration = 0.00;
+    //Initial attacks
+    UnitDefender.getAttacked(UnitAttacker);
+    UnitAttacker.getAttacked(UnitDefender);
+    //Timed fight sequence
+    while(UnitAttacker.getHealth() > 0 && UnitDefender.getHealth() > 0){
+        if(fmod(fightDuration,UnitAttacker.getAttackSpeed())<0.01){
+            UnitDefender.getAttacked(UnitAttacker);
+            if(UnitDefender.getHealth()<=0){
+                break;
+            }
+            fightDuration += 0.01;
+            continue;
         }
-        UnitA.getAttacked(UnitB);
-        if(UnitA.getHealth()<=0){
-            break;
+        if(fmod(fightDuration,UnitDefender.getAttackSpeed())<0.01){
+            UnitAttacker.getAttacked(UnitDefender);
+            if(UnitAttacker.getHealth()<=0){
+                break;
+            }
+            fightDuration += 0.01;
+            continue;
         }
+        fightDuration += 0.01;
     }
-    if(UnitA.getHealth()<=0){
-        std::cout << UnitB.getName() << " wins. Remaining HP:" << UnitB.getHealth()<< std::endl; 
+    if(UnitAttacker.getHealth()<=0){
+        std::cout << UnitDefender.getName() << " wins. Remaining HP:" << UnitDefender.getHealth()<< std::endl; 
     }
-    if(UnitB.getHealth()<=0){
-        std::cout << UnitA.getName() << " wins. Remaining HP:" << UnitA.getHealth()<< std::endl; 
+    if(UnitDefender.getHealth()<=0){
+        std::cout << UnitAttacker.getName() << " wins. Remaining HP:" << UnitAttacker.getHealth()<< std::endl; 
     }
 }
 

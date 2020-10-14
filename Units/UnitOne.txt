@@ -1,5 +1,6 @@
 {
     "name" : "Arthas Menethil",
     "hp" : 40000,
-    "dmg" : 7000
+    "dmg" : 7000,
+    "attackspeed" : 0.9
 }

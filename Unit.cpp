@@ -1,7 +1,11 @@
 #include "Unit.h"
 
 
-Unit::Unit(std::string pName,double pHealth, double pDamage) : Name(pName), Damage(pDamage), Health(pHealth){};
+Unit::Unit(std::string pName,double pHealth, double pDamage, double pAttackspeed) : 
+    Name(pName),
+    Damage(pDamage),
+    Health(pHealth),
+    Attackspeed(pAttackspeed){};
 
 std::string Unit::getName() const{
     return Name;
@@ -11,6 +15,9 @@ double Unit::getHealth() const{
 }
 double Unit::getDamage() const{
     return Damage;
+}
+double Unit::getAttackSpeed() const{
+    return Attackspeed;
 }
 
 void Unit::getAttacked(const Unit& unitAttacker){
@@ -26,9 +33,10 @@ Unit::Unit(const Unit& alpha):
     Health(alpha.getHealth())
     {}
 
+
 Unit Unit::parseUnit(const std::string fileName){
     std::string tmpString, name = "";
-    double health, damage = 0;
+    double health, damage, attackspeed = 0;
     std::string line = "" , searchTerm;
     std::size_t searchResult;
     std::ifstream file(fileName);
@@ -59,6 +67,12 @@ Unit Unit::parseUnit(const std::string fileName){
             tmpString = line.substr(searchResult+searchTerm.size());
             damage = std::stod(tmpString);
         }
+        searchTerm ="\"attackspeed\" : ";
+        searchResult = line.find(searchTerm);
+        if(searchResult != std::string::npos){
+            tmpString = line.substr(searchResult+searchTerm.size());
+            attackspeed = std::stod(tmpString);
+        }
         searchTerm = "\"hp\" : ";
         searchResult = line.find(searchTerm);
         if(searchResult != std::string::npos){
@@ -69,6 +83,6 @@ Unit Unit::parseUnit(const std::string fileName){
     }
     
     file.close();
-    Unit outputUnit(name,health,damage);
+    Unit outputUnit(name,health,damage,attackspeed);
     return outputUnit;
 }

@@ -1,5 +1,6 @@
 {
     "name" : "Maiev Shadowsong",
     "hp" : 25000,
-    "dmg" : 9999
+    "dmg" : 9999,
+    "attackspeed" : 0.4
 }
