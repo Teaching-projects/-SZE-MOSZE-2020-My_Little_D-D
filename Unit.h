@@ -1,12 +1,7 @@
 #ifndef HEADERFILE_H
 #define HEADERFILE_H
 
-
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
-#include <cstring>
+#include "jsonparser.h"
 
 class Unit
 {

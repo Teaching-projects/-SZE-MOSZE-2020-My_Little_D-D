@@ -1,8 +1,11 @@
-#include <iostream>
-#include <sstream>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <cstring>
 
 #include "Unit.h"
+#include "jsonparser.h"
 
 void printUnits(const Unit& UnitA,const Unit& UnitB) {
     std::cout << UnitA.getName() << " Hp:" << UnitA.getHealth() << " Damage: " << UnitA.getDamage() << std::endl;
