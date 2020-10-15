@@ -1,5 +1,0 @@
-{
-    "name" : "Arthas Menethil",
-    "hp" : 40000,
-    "dmg" : 7000
-}
