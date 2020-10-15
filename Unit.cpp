@@ -1,25 +1,40 @@
 #include "Unit.h"
 
-
+  /**
+  *\brief osztaly az egyseg keszitesehez
+  *\param name az egyseg neve
+  *\param health az egyseg HP-ja
+  *\param damage az egyseg sebzesi kepessege
+  *\param pAttackspeed a csata sebesseget befolyasolo parameter, a sebzesek bevitele kozotti ido alapjan
+  */
 Unit::Unit(std::string pName,double pHealth, double pDamage, double pAttackspeed) : 
     Name(pName),
     Damage(pDamage),
     Health(pHealth),
     Attackspeed(pAttackspeed){};
 
+  ///az egyseg nevevel visszatero getter
+  ///\return name
 std::string Unit::getName() const{
     return Name;
 }
+  ///az egyseg HP-jat lekero getter
+  ///\return Health
 double Unit::getHealth() const{
     return Health;
 }
+  ///az egyseg sebzeset lekero getter
+  ///\return Damage
 double Unit::getDamage() const{
     return Damage;
 }
+  /// ket sebzes bevitele kozott eltelt ido
+  ///\return Attackspeed
 double Unit::getAttackSpeed() const{
     return Attackspeed;
 }
 
+    /// a tamadast levezenylo fuggveny
 void Unit::getAttacked(const Unit* unitAttacker){
     Health -= unitAttacker->getDamage();
     if(Health < 0){
@@ -27,6 +42,7 @@ void Unit::getAttacked(const Unit* unitAttacker){
     }
 }
 
+    /// konstruktor
 Unit::Unit(const Unit& alpha):
     Name(alpha.getName()),
     Damage(alpha.getDamage()),
@@ -34,6 +50,7 @@ Unit::Unit(const Unit& alpha):
     Attackspeed(alpha.getAttackSpeed())
     {}
 
+    /// a tamadast levezenylo fuggveny, amely a sebzesi idokozoket is lekezeli
 void Unit::attack(const Unit &unitDefender){
     double fightDuration = 0.00;
     Unit UnitDefender = unitDefender;
@@ -68,6 +85,9 @@ void Unit::attack(const Unit &unitDefender){
     }
 }
 
+  /// parseUnit fuggveny,  ami parameterkent var egy fajlnevet, es ha abban az alabbi JSON formatumnak megfeleloen le van irva, amennyiben a file nem letezik, azt lekezeli
+  ///@param a parameter egy txt file JSON formatumban
+  ///@return outputUnit visszater a kimeneti fajllal
 
 Unit Unit::parseUnit(const std::string fileName){
     std::string tmpString, name = "";
