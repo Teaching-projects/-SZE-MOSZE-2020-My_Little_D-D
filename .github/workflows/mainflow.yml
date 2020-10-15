@@ -3,7 +3,7 @@ name: mainflow.yml
 on:
   push:
     branches:
-      - attackspeed
+      - master
 
 jobs:
   build:
